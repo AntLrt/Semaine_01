@@ -79,6 +79,84 @@ function clickbtn3() {
 
 }
 
+// Exercice evaluation 4
+
+var bouton4= document.getElementById("Id_btn4");
+bouton4.addEventListener("click",clickbtn4);
+
+function clickbtn4()
+{
+    
+do 
+{
+    var PU=parseInt(prompt("Veuillez saisir le prix unitaire du produit à commander"));
+    var QTECOM=parseInt(prompt("Veuillez saisir la quantité du produit à commander"));    
+    var PORT=6
+    var TOT=PU*QTECOM
+    
+    
+        if((TOT>=100)&&(TOT<=200))
+        {
+            REM=(0.05)*TOT;
+            PORT=(0.02)*(TOT-REM);
+            
+                if(PORT<6)
+                {
+                    PORT=6
+                    PAP=(TOT-REM)+PORT;
+                    alert("Cela vous coûtera "+PAP.toFixed(2)+"€, dont "+PORT.toFixed(2)+"€ de frais de port et "+REM.toFixed(2)+"€ de remise");
+                }
+
+                else
+                {
+                    PAP=(TOT-REM)+PORT;
+                    alert("Cela vous coûtera "+PAP.toFixed(2)+"€, dont "+PORT.toFixed(2)+"€ de frais de port et "+REM.toFixed(2)+"€ de remise");
+                }
+        }
+
+        else if((TOT>=201)&&(TOT<=500))
+        {
+            REM=(0.1)*TOT;
+            PORT=(0.02)*(TOT-REM);
+            PAP=(TOT-REM)+PORT;
+            alert("Cela vous coûtera "+PAP.toFixed(2)+"€, dont "+PORT.toFixed(2)+"€ de frais de port et "+REM.toFixed(2)+"€ de remise");
+        }
+
+        else if(TOT>500)
+        {
+            REM=(0.1)*TOT;
+
+                if(TOT-REM<500)
+                {
+                PORT=(0.02)*(TOT-REM);
+                PAP=(TOT-REM)+PORT;
+                alert("Cela vous coûtera "+PAP.toFixed(2)+"€, dont "+PORT.toFixed(2)+"€ de frais de port et "+REM.toFixed(2)+"€ de remise");
+                }
+
+                else
+                {
+                    PORT=0*(TOT-REM);
+                    PAP=(TOT-REM);
+                    alert("Cela vous coûtera "+PAP.toFixed(2)+"€, dont "+PORT.toFixed(2)+"€ de frais de port et "+REM.toFixed(2)+"€ de remise");
+                }
+        
+        }
+
+        else
+        {
+
+        REM=0*TOT
+        PAP=(TOT-REM)+PORT;
+                
+        alert("Cela vous coûtera "+PAP.toFixed(2)+"€, dont "+PORT.toFixed(2)+"€ de frais de port et "+REM.toFixed(2)+"€ de remise");
+        }
+            
+        
+}
+
+while((PU!=0,null)||(QTECOM!=0,null))
+}
+
 // Exercice evaluation 5
 
 document.getElementById("contact").addEventListener("submit", function(e) {
