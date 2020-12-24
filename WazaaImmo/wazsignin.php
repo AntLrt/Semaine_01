@@ -1,36 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<?php 
 
-// INSERT INTO `inscription` (`inscr_num`, `inscr_civilite`, `inscr_nom`, `inscr_prenom`, `inscr_date`, `inscr_mail`, `inscr_mp`) 
-
-// VALUES (NULL, 'Monsieur', 'Loriot', 'Antoine', '15/07/96', 'loriot.antoine.pro@gmail.com', '15ju!llet');
-
+<?php
 include("wazheader.php");
 include("connexion.php");
-
 ?>
-
-<script language='javascript' type='text/javascript'>
-
-var b_civilite=false; var b_nom=false; var b_prenom=false; var b_date=false; var b_mail=false; var b_mp=false;
-
-function envoyer()
-{
-if(b_civilite==true && b_nom==true && b_prenom ==true && b_date ==true && b_mail ==true && b_mp==true)
-{
-document.getElementById('message').innerText = 'Envoi serveur';
-//document.getElementById('inscription').submit();
-}
-else
-{
-document.getElementById('message').innerText = "Le formulaire n'est pas complet";
-}
-}
-
-</script>
-<script language='javascript' src='js/v_inscr.js'></script>
 
 </head>
 
@@ -63,8 +38,8 @@ document.getElementById('message').innerText = "Le formulaire n'est pas complet"
 </div>
 
 <div class="form-group">
-    <label for="example-date-input">Date de naissance</label>
-        <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+    <label for="inputdate">Date de naissance</label>
+        <input class="form-control" type="date" value="2011-08-19" id="inputdate">
 </div>
 
 <div class="row">
@@ -74,8 +49,8 @@ document.getElementById('message').innerText = "Le formulaire n'est pas complet"
     </div>
 
     <div class="form-group col-6">
-        <label for="inputmail">Confirmer l'adresse email</label>
-        <input type="email" class="form-control" id="inputmail" placeholder="name@example.com">
+        <label for="inputmailverif">Confirmer l'adresse email</label>
+        <input type="email" class="form-control" id="inputmailverif" placeholder="name@example.com">
     </div>
 </div>
 
@@ -89,8 +64,8 @@ document.getElementById('message').innerText = "Le formulaire n'est pas complet"
     </div>
 
     <div class="form-group col-6">
-        <label for="inputprenom">Confirmer le mot de passe</label>
-            <input type="text" class="form-control" id="inputprenom">
+        <label for="inputmdconf">Confirmer le mot de passe</label>
+            <input type="text" class="form-control" id="inputmpconf">
     </div>
 </div>
 
